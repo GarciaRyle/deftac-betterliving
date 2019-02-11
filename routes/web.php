@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//User
+Route::get('/profile', 'UserController@profile')->name('profile');
+Route::post('/profile', 'UserController@update_avatar')->name('profile');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
+
